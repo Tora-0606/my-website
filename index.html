@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自己紹介 | 大学1年生</title>
+  <style>
+    :root {
+      --bg-color: #f7f8fa;
+      --surface-color: #ffffff;
+      --text-main: #1f2937;
+      --text-sub: #4b5563;
+      --accent: #1e40af;
+      --accent-soft: #eff6ff;
+      --border-color: #e5e7eb;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #111827;
+        --surface-color: #1f2937;
+        --text-main: #f9fafb;
+        --text-sub: #d1d5db;
+        --accent: #60a5fa;
+        --accent-soft: #1e3a8a;
+        --border-color: #374151;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.8;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    /* ヘッダー */
+    header {
+      background-color: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.25rem 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .icon-box {
+      flex-shrink: 0;
+      width: 68px;
+      height: 68px;
+      border-radius: 12px;
+      background-color: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 0.5rem;
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: 0.02em;
+    }
+
+    /* セクション共通 */
+    section {
+      background-color: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.75rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 0.75rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.4;
+    }
+
+    p {
+      color: var(--text-main);
+      margin-bottom: 1rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 要点グリッド（広い画面では3列、狭い画面では1列） */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-card {
+      background-color: var(--bg-color);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.1rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* 取り組みリスト（広い画面では2列、狭い画面では1列） */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .detail-box {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .detail-box h3 {
+      font-size: 1.05rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-box p {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+    }
+
+    /* 今後の抱負ボックス */
+    .future-box {
+      background-color: var(--accent-soft);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .future-box p {
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      margin-top: 2rem;
+    }
+
+    /* 狭い画面（スマートフォンなど）向け調整 */
+    @media (max-width: 680px) {
+      .container {
+        padding: 1.25rem 1rem 3rem;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        gap: 1rem;
+      }
+
+      header h1 {
+        font-size: 1.45rem;
+      }
+
+      section {
+        padding: 1.4rem 1.25rem;
+      }
+
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="icon-box" aria-hidden="true">
+        <!-- そろばんをモチーフにしたインラインSVG -->
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2">
+          <rect x="4" y="6" width="28" height="24" rx="2"/>
+          <line x1="4" y1="14" x2="32" y2="14"/>
+          <line x1="11" y1="6" x2="11" y2="30"/>
+          <line x1="18" y1="6" x2="18" y2="30"/>
+          <line x1="25" y1="6" x2="25" y2="30"/>
+          <circle cx="11" cy="10" r="2.2" fill="currentColor"/>
+          <circle cx="18" cy="19" r="2.2" fill="currentColor"/>
+          <circle cx="25" cy="24" r="2.2" fill="currentColor"/>
+        </svg>
+      </div>
+      <div>
+        <span class="badge">大学1年生</span>
+        <h1>自己紹介</h1>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>これまでの経験：そろばんの取り組み</h2>
+        <div class="grid-3">
+          <div class="stat-card">
+            <div class="stat-label">継続期間</div>
+            <div class="stat-value">小学1年〜中学2年</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">目標</div>
+            <div class="stat-value">暗算初段・珠算1級</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">到達結果</div>
+            <div class="stat-value">暗算初段 取得</div>
+          </div>
+        </div>
+
+        <p>
+          小学校1年生から中学校2年生までそろばんを習っていました。引き算の克服から始まり、得意な暗算で初段、苦手な珠算で1級を目指して取り組みました。
+        </p>
+
+        <div class="grid-2">
+          <div class="detail-box">
+            <h3>課題への工夫と自主練習</h3>
+            <p>
+              練習時間の不足という課題に対し、週2回のおけいこに加え、プリントを使って2日に1回の自主練習を行い、週100問を解きました。さらに、60分の試験時間から3分、5分、10分と順に時間を短縮して負荷をかけることで計算速度を高めました。
+            </p>
+          </div>
+          <div class="detail-box">
+            <h3>結果とそこから得た学び</h3>
+            <p>
+              その結果、暗算は目標としていた初段を取得し、珠算も2級合格圏内まで上達しました。高校受験との両立のため受検せず辞めた悔しさは残りましたが、この経験を通じて失敗から学び次につなげる姿勢を養いました。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>今後の抱負</h2>
+        <div class="future-box">
+          <p>
+            将来どんな困難な状況に直面しても、めげずにこれまでの経験で培った姿勢を仕事へ活かしていきます。
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>自己紹介ページ</p>
+    </footer>
+  </div>
+</body>
+</html>
